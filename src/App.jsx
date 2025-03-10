@@ -46,7 +46,7 @@ function App() {
       </div>:null}
 
       {/* No Results Message */}
-      {!posts?<p className="no-results">Không tìm thấy bài viết nào.</p>:null}
+      {!posts.length?<p className="no-results">Không tìm thấy bài viết nào.</p>:null}
 
       {/* List of Posts */}
       <ul className="post-list">
