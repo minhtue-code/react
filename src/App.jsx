@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import Navigation from "./components/Navigation";
@@ -24,7 +24,7 @@ function App() {
             </Routes>
         </BrowserRouter>
     );
-=======
+}
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -117,7 +117,6 @@ function App() {
       </div>:null}
     </div>
   );
->>>>>>> 1c5b7b954bd1aaef9214f7b7b015efc6814a66e8
 }
 
 export default App;
