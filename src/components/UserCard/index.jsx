@@ -1,4 +1,7 @@
-const UserCard = ({ name, age, isVerified }) => {
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const UserCard = ({ name, age= 18, isVerified }) => {
     return (
         <div
             style={{
@@ -13,5 +16,12 @@ const UserCard = ({ name, age, isVerified }) => {
         </div>
     );
 };
+
+UserCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number,
+    isVerified: PropTypes.bool.isRequired,
+};
+
 
 export default UserCard;

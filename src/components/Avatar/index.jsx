@@ -1,4 +1,6 @@
-const Avatar = ({ src, alt, size, isRounded }) => {
+import PropTypes from 'prop-types';
+
+const Avatar = ({ src, alt, size = 50, isRounded }) => {
     return (
         <img
             src={src}
@@ -11,6 +13,12 @@ const Avatar = ({ src, alt, size, isRounded }) => {
             }}
         />
     );
+};
+Avatar.propTypes = {
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string,
+    size: PropTypes.number,
+    isRounded: PropTypes.bool,
 };
 
 export default Avatar;

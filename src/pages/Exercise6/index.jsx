@@ -1,28 +1,7 @@
-import { useState, useEffect } from "react";
-
+import React from "react";
+import useFetch from "../../hooks/useFetch";
 function Exercise6() {
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        setLoading(true);
-        fetch("https://jsonplaceholder.typicode.com/posts")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Lỗi khi tải dữ liệu");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                setData(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                setError(error.message);
-                setLoading(false);
-            });
-    }, []);
+    const {data, loading, error} = useFetch("https://jsonplaceholder.typicode.com/posts");
 
     if (loading) return <p>Đang tải...</p>;
     if (error) return <p>Lỗi: {error}</p>;

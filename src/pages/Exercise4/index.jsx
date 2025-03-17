@@ -1,16 +1,8 @@
 import { useState } from "react";
+import useClipboard from "../../hooks/useClipboard";
 
 function Exercise4() {
-    const [clipboard, setClipboard] = useState("");
-
-    const readClipboard = async () => {
-        try {
-            const text = await navigator.clipboard.readText();
-            setClipboard(text);
-        } catch (error) {
-            console.error("Không thể đọc clipboard", error);
-        }
-    };
+   const [clipboard, readClipboard] = useClipboard();
 
     return (
         <div>
